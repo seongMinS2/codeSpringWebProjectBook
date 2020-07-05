@@ -30,11 +30,15 @@
 	</delete>
 	
 	<update id="update">
-		update tbl_board
-		set title = #{title},
-		content = #{content},
-		writer = #{writer},
-		updateDate = sysdate
-		where bno = #{bno}
+		UPDATE 
+			TBL_BOARD
+		SET
+			title = #{title}
+			,content = #{content}
+			,writer = #{writer}
+			,updateDate = sysdate
+		WHERE 
+			1 = 1
+		AND bno = #{bno}
 	</update>
 </mapper>

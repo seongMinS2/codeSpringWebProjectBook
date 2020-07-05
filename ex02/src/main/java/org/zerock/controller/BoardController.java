@@ -57,8 +57,8 @@ public class BoardController extends CommonController {
 	
 	@PostMapping("/remove")
 	public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr) {
-		log.info("remove........." + bno);
-		if(service.remove(bno)) {
+		log.info("jjanga remove........." + bno);
+		if ( service.remove(bno) ){
 			rttr.addFlashAttribute("result", "success");
 		}
 		return "redirect:/board/list";
