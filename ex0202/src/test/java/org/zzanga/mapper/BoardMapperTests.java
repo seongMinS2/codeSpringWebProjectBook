@@ -62,7 +62,7 @@ public class BoardMapperTests {
 		
 		BoardVO board = new BoardVO();
 		// 실행전 존재하는 번호인지 확인할 것
-		board.setBno(5L);
+		board.setBno(4L);
 		board.setTitle("수정된 제목");
 		board.setContent("수정된 내용");
 		board.setWriter("user00");
