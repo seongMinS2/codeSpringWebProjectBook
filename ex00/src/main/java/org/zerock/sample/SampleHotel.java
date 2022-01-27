@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.ToString;
 
 @Component
@@ -18,7 +17,5 @@ public class SampleHotel {
 	 * @RequiredArgsConstructor 어노테이션은 @NonNull이나 final이 붙은 인스턴스 변수에 대한 생성자를 만들어 냅니다.
 	 */
 	private Chef chef;
-	@NonNull
-	private String str;
 	
 }
