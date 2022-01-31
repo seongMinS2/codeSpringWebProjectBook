@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!-- appender : where -->
+<!-- layout : how -->
+<!-- message : what -->
+<!-- logger : who -->
+<!-- logging event level : logger가 메시지를 기록할 지 여부를 결정하는 기준. -->
+<!-- debug -> info -> warn -> error -> fatal -->
+<!-- logger에 설정된 이벤트 등급 이상의 이벤트만 기록. -->
+<configuration status="warn">
+    <Appenders>
+        <!-- 콜솔 -->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd hh:mm:ss} %5p [%c] %m%n"/>
+        </Console>
+    </Appenders>
+    
+    <loggers>
+<!--     	Application Loggers -->
+<!-- 		<logger name="org.zerock.controller" level="info"> -->
+<!-- 		</logger> -->
+		
+			<!-- 3rdparty Loggers -->
+<!-- 		<logger name="org.springframework.core" level="info"> -->
+<!-- 		</logger> -->
+		
+<!-- 		<logger name="org.springframework.beans" level='info'> -->
+<!-- 		</logger> -->
+		
+<!-- 		<logger name="org.springframework.context" level="info"> -->
+<!-- 		</logger> -->
+	
+<!-- 		<logger name="org.springframework.web" level="info"> -->
+<!-- 		</logger> -->
+		
+		<!-- SQL Logger -->
+		<logger name="jdbc.connection" level="warn" additivity="false">
+			<appender-ref ref="console"/> 
+		</logger>
+		
+		<logger name="jdbc.audit" level="warn" additivity="false"> 
+			<appender-ref ref="console"/> 
+		</logger> 
+	    
+		<logger name="jdbc.resultset" level="warn" additivity="false">
+			<appender-ref ref="console"/> 
+		</logger>
+		
+		<logger name="jdbc.sqlonly" level="info" additivity="false"> 
+			<appender-ref ref="console"/> 
+		</logger>
+	     
+		<logger name="jdbc.resultsettable" level="warn" additivity="false"> 
+			<appender-ref ref="console"/> 
+		</logger> 
+		
+		<logger name="jdbc.sqltiming" level="warn" additivity="false">
+			<appender-ref ref="console"/> 
+		</logger>
+	    		
+        <Root level="info">
+            <AppenderRef ref="console"/>
+        </Root>
+    </loggers>
+ 
+</configuration>

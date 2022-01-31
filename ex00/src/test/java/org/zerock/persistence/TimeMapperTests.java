@@ -9,10 +9,11 @@ import org.zerock.mapper.TimeMapper;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
-@Log4j
+@Log4j2
 public class TimeMapperTests {
 
 	@Setter(onMethod_ = {@Autowired})
