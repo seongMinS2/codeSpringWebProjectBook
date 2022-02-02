@@ -20,8 +20,8 @@ public class RootConfig {
 	@Bean
 	public DataSource dataSource() {
 		HikariConfig hikariConfig = new HikariConfig();
-		hikariConfig.setDriverClassName("org.mariadb.jdbc.Driver");
-		hikariConfig.setJdbcUrl("jdbc:mariadb://localhost:3306/cswebproject");
+		hikariConfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
+		hikariConfig.setJdbcUrl("jdbc:log4jdbc:mariadb://localhost:3306/cswebproject?characterEncoding=UTF-8;serverTimezone=UTC");
 		hikariConfig.setUsername("book_ex");
 		hikariConfig.setPassword("gmsadmin12#");
 		

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
  
-<configuration status="debug">
- 
+<!-- appender : where -->
+<!-- layout : how -->
+<!-- message : what -->
+<!-- logger : who -->
+<!-- logging event level : logger가 메시지를 기록할 지 여부를 결정하는 기준. -->
+<!-- debug -> info -> warn -> error -> fatal -->
+<!-- logger에 설정된 이벤트 등급 이상의 이벤트만 기록. -->
+<configuration status="warn">
     <Appenders>
         <!-- 콜솔 -->
         <Console name="console" target="SYSTEM_OUT">
@@ -10,63 +16,51 @@
     </Appenders>
     
     <loggers>
-    
-    	<!-- Application Loggers -->
-		<logger name="org.zerock.controller">
-			<level value="info" />
-		</logger>
+<!--     	Application Loggers -->
+<!-- 		<logger name="org.zerock.controller" level="info"> -->
+<!-- 		</logger> -->
 		
-		<!-- 3rdparty Loggers -->
-		<logger name="org.springframework.core">
-			<level value="info" />
-		</logger>
+			<!-- 3rdparty Loggers -->
+<!-- 		<logger name="org.springframework.core" level="info"> -->
+<!-- 		</logger> -->
 		
-		<logger name="org.springframework.beans">
-			<level value="info" />
-		</logger>
+<!-- 		<logger name="org.springframework.beans" level='info'> -->
+<!-- 		</logger> -->
 		
-		<logger name="org.springframework.context">
-			<level value="info" />
-		</logger>
+<!-- 		<logger name="org.springframework.context" level="info"> -->
+<!-- 		</logger> -->
 	
-		<logger name="org.springframework.web">
-			<level value="info" />
-		</logger>
+<!-- 		<logger name="org.springframework.web" level="info"> -->
+<!-- 		</logger> -->
 		
 		<!-- SQL Logger -->
-		<logger name="jdbc.connection" additivity="false">
-			<level value="warn" />
-			<appender-ref ref="console"/> 
-		</logger>
+		<Logger name="jdbc.connection" level="warn" additivity="false">
+			<AppenderRef ref="console"/>
+		</Logger>
 		
-		<logger name="jdbc.audit" additivity="false"> 
-			<level value="warn"/>  
-			<appender-ref ref="console"/> 
-		</logger> 
+		<Logger name="jdbc.audit" level="warn" additivity="false"> 
+			<AppenderRef ref="console"/> 
+		</Logger> 
 	    
-		<logger name="jdbc.resultset" additivity="false">
-			<level value="warn" />
-			<appender-ref ref="console"/> 
-		</logger>
+		<Logger name="jdbc.resultset" level="warn" additivity="false">
+			<AppenderRef ref="console"/>
+		</Logger>
 		
-		<logger name="jdbc.sqlonly" additivity="false"> 
-			<level value="info"/> 
-			<appender-ref ref="console"/> 
-		</logger>
+		<Logger name="jdbc.sqlonly" level="info" additivity="false"> 
+			<AppenderRef ref="console"/>
+		</Logger>
 	     
-		<logger name="jdbc.resultsettable" additivity="false"> 
-			<level value="info"/>  
-			<appender-ref ref="console"/> 
-		</logger> 
+		<Logger name="jdbc.resultsettable" level="warn" additivity="false"> 
+			<AppenderRef ref="console"/>
+		</Logger> 
 		
-		<logger name="jdbc.sqltiming" additivity="false">
-			<level value="warn" />
-			<appender-ref ref="console"/> 
-		</logger>
+		<Logger name="jdbc.sqltiming" level="warn" additivity="false">
+			<AppenderRef ref="console"/>
+		</Logger>
 	    		
-        <root level="debug" additivity="true">
+        <Root level="INFO">
             <AppenderRef ref="console"/>
-        </root>
+        </Root>
     </loggers>
  
 </configuration>
